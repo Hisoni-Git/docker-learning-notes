@@ -46,7 +46,7 @@ A virtual machine virtualizes **hardware**: each VM runs a full guest operating 
 - A **VM** is a **separate house** — its own foundation, plumbing, electricity, kitchen.
 - A **container** is a **rented room** in an apartment building — it shares the building's utilities and brings only its own furniture.
 
-![Containers vs VMs](images/container-vs-vm.png)
+![Containers vs VMs](image/container-vs-vm.png)
 
 | Area | Container | Virtual Machine |
 |---|---|---|
@@ -69,7 +69,7 @@ Containers are lightweight because they share the host OS kernel instead of boot
 **In simple words**
 A container is a **suitcase, not a house**. It carries only the app's belongings and **borrows** the engine (kernel), network and power from the host.
 
-![Why containers are lightweight](images/why-lightweight.png)
+![Why containers are lightweight](image/why-lightweight.png)
 
 - **Namespaces** = the walls of each room → a container sees only its own processes, network and files.
 
@@ -110,11 +110,11 @@ Docker uses a client–server architecture. The **Docker client** (`docker`) sen
 | Containers | Running apps | Dishes being served |
 | Registry | Image store | Supermarket |
 
-![Docker architecture](images/docker-architecture.png)
+![Docker architecture](image/docker-architecture.png)
 
 **What actually runs under `docker run` (seen during install):**
 
-![Runtime chain](images/runtime-chain.png)
+![Runtime chain](image/runtime-chain.png)
 
 > ⭐ If the daemon stops, **every** Docker command fails — the course's "Docker is brain dead" joke. The daemon is a single point of failure and runs as root.
 
@@ -128,7 +128,7 @@ The Docker lifecycle is: write a **Dockerfile** → `docker build` creates an **
 **In simple words**
 Recipe → packed box → dish served → put on the shop shelf for others.
 
-![Docker lifecycle](images/docker-lifecycle.png)
+![Docker lifecycle](image/docker-lifecycle.png)
 
 > ⚠️ **Correction:** you push and pull **images**, not containers.
 > **Image** = the recipe box (stored). **Container** = the dish being eaten (running). One image → many containers.
@@ -165,7 +165,7 @@ Every instruction in a Dockerfile creates a read-only **layer**. Layers are cach
 **In simple words**
 Like stacking plates. If only the top plate changes, you don't re-wash the whole stack.
 
-![Image layers](images/image-layers.png)
+![Image layers](image/image-layers.png)
 
 **Example Dockerfile (Python Hello World):**
 
@@ -202,7 +202,7 @@ CMD ["python3", "app.py"]
 
 > **Why not the existing AVD-VM?** It runs **Windows Server 2025**. Docker there runs **Windows containers only**, so `FROM ubuntu` images from the course would fail. AKS nodes are Linux too, so a Linux VM matches real work.
 
-![Lab flow](images/lab-flow.png)
+![Lab flow](image/lab-flow.png)
 
 ### Step 1 — Select the subscription (Cloud Shell)
 
@@ -276,7 +276,7 @@ exit
 
 **Why:** the client talks to the daemon through `/var/run/docker.sock`. Only **root** and the **docker group** may use it. `-a` = append (without it, the user is removed from other groups).
 
-![docker.sock permission](images/docker-sock.png)
+![docker.sock permission](image/docker-sock.png)
 
 > ⚠️ **Security:** docker group membership = root-level control of the host. Add only trusted users.
 

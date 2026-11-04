@@ -4,13 +4,13 @@ My hands-on notes and labs while learning Docker from zero to hero, practiced on
 
 Each topic is written as **Definition → In simple words → Diagram**, and each lab command comes with **why** it is used.
 
-![Docker architecture](images/docker-architecture.png)
+![Docker architecture](Day-1/image/docker-architecture.png)
 
 ## Notes
 
 | # | Topic | What's inside |
 |---|---|---|
-| 01 | [Docker Basics + Lab 1](01-docker-basics.md) | Containers vs VMs, why lightweight, architecture, lifecycle, layers, Docker install on Azure VM, issues & fixes, interview Q&A |
+| 01 | [Docker Basics + Lab 1](Day-1/01-docker-basics.md) | Containers vs VMs, why lightweight, architecture, lifecycle, layers, Docker install on Azure VM, issues & fixes, interview Q&A |
 
 ## Lab setup
 
